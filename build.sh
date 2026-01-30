@@ -46,10 +46,10 @@ fi
 
 echo "Compiling..."
 make -j$(nproc 2>/dev/null || sysctl -n hw.ncpu 2>/dev/null || echo 4)
-mv objs/nginx objs/librethttpd
+mv objs/nginx objs/librehttpd
 
 echo ""
 echo "Build complete!"
-echo "Binary: objs/librethttpd"
+echo "Binary: objs/librehttpd"
 echo ""
 echo "To install: doas make install (or sudo make install)"

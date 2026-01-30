@@ -1,36 +1,38 @@
 # LibreHTTPd
 
-Minimal, optimized nginx fork built for speed and simplicity.
+Minimal nginx fork. No bloat, just what you need.
 
-## Why LibreHTTPd?
+## Why?
 
-- **Stripped down**: Only essential modules (no mail, fastcgi, uwsgi bloat)
-- **Optimized**: Aggressive compiler flags for maximum performance
-- **Actually maintained**: Built by someone who uses it daily
+nginx is great but comes with everything. LibreHTTPd strips it down to essentials:
 
-## Performance
+- **No mail server modules** - you're not running a mail server
+- **No fastcgi/uwsgi/scgi** - modern apps don't need this
+- **No corporate bloat** - built by someone who actually uses it
+- **Your modules only** - static files, proxy, SSL, that's it
 
-LibreHTTPd is 10-20% faster than stock nginx on static file serving due to:
-- Smaller binary (better cache locality)
-- `-march=native` optimization for your CPU
-- Link-time optimization (LTO)
-- Stripped unused code paths
+## Philosophy
+
+- **Libre**: Free as in freedom, no corporate control
+- **Minimal**: Only what's needed, nothing more
+- **Transparent**: You can read and understand the entire config
+- **DIY**: Built for self-hosters who want control
 
 ## What's included
 
 - Static file serving
 - Reverse proxy
-- SSL/TLS (HTTP/2)
+- SSL/TLS (HTTP/2, HTTP/3)
 - Gzip compression
 - Rate limiting
-- Real IP detection
-- Fancyindex module
+- Fancyindex (directory listings)
 
 ## What's removed
 
-Everything you don't need: mail modules, fastcgi, uwsgi, scgi, grpc, memcached, and tons of unused upstream modules.
+Mail modules, fastcgi, uwsgi, scgi, grpc, memcached, and dozens of unused upstream modules you'll never touch.
 
 ## Building
+
 ```sh
 git clone --recurse-submodules https://github.com/foss-daily/LibreHTTPd.git
 cd LibreHTTPd
@@ -39,10 +41,25 @@ cd LibreHTTPd
 
 Binary will be at `objs/librehttpd`
 
-## Benchmarks
+## Who is this for?
 
-Performance comparisons vs nginx, Caddy, and Apache coming soon.
+- Self-hosters running personal sites
+- People who hate unnecessary complexity
+- Anyone tired of configuring modules they don't use
+- Homelab enthusiasts
+- FreeBSD users (optimized but works everywhere)
+
+## Not for you if
+
+- You need fastcgi/PHP-FPM
+- You run a mail server through nginx
+- You want "just works" with zero config (use Caddy)
+- You need enterprise support
 
 ## License
 
 2-clause BSD (same as nginx)
+
+---
+
+Use it or don't.

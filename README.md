@@ -37,7 +37,7 @@ cd LibreHTTPd
 ./build.sh
 ```
 
-Binary will be at `objs/librethttpd`
+Binary will be at `objs/librehttpd`
 
 ## Benchmarks
 

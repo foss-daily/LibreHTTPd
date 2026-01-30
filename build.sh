@@ -10,10 +10,10 @@ if [ ! -d "ngx-fancyindex-master" ]; then
 fi
 
 ./configure \
-  --prefix=/usr/local/librethttpd \
-  --sbin-path=/usr/local/bin/librethttpd \
-  --conf-path=/etc/librethttpd/librethttpd.conf \
-  --pid-path=/var/run/librethttpd.pid \
+  --prefix=/usr/local/librehttpd \
+  --sbin-path=/usr/local/bin/librehttpd \
+  --conf-path=/etc/librethttpd/librehttpd.conf \
+  --pid-path=/var/run/librehttpd.pid \
   --with-http_ssl_module \
   --with-http_v2_module \
   --with-http_realip_module \

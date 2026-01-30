@@ -48,8 +48,13 @@ fi
   --without-http_upstream_ip_hash_module \
   --without-http_upstream_least_conn_module \
   --without-http_upstream_random_module \
-  --with-cc-opt="-O3 -march=native -mtune=native -flto -fomit-frame-pointer -pipe -funroll-loops -ffast-math -DTCP_FASTOPEN=23" \
-  --with-ld-opt="-flto -Wl,-O2 -Wl,--as-needed -Wl,--gc-sections" \
+  --with-cc-opt="-march=native -O3 -pipe -fno-plt -fexceptions \
+    -Wp,-D_FORTIFY_SOURCE=3 -Wformat -Werror=format-security \
+    -fstack-clash-protection -fcf-protection \
+    -flto=auto" \
+  --with-ld-opt="-Wl,-O1 -Wl,--sort-common -Wl,--as-needed \
+    -Wl,-z,relro -Wl,-z,now -Wl,-z,pack-relative-relocs \
+    -flto=auto" \
   --add-module=./ngx-fancyindex-master
 
 echo "Compiling..."

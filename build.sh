@@ -46,6 +46,7 @@ fi
 
 echo "Compiling..."
 make -j$(nproc 2>/dev/null || sysctl -n hw.ncpu 2>/dev/null || echo 4)
+mv objs/nginx objs/librethttpd
 
 echo ""
 echo "Build complete!"

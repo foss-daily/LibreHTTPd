@@ -16,8 +16,16 @@ fi
   --pid-path=/var/run/librehttpd.pid \
   --with-http_ssl_module \
   --with-http_v2_module \
+  --with-http_v3_module \
   --with-http_realip_module \
   --with-http_gzip_static_module \
+  --with-http_gunzip_module \
+  --with-http_slice_module \
+  --with-http_stub_status_module \
+  --with-http_sub_module \
+  --with-stream \
+  --with-stream_ssl_module \
+  --with-stream_realip_module \
   --with-pcre-jit \
   --with-file-aio \
   --with-threads \

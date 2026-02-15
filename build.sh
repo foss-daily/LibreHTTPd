@@ -32,7 +32,6 @@ fi
   --without-http_charset_module \
   --without-http_ssi_module \
   --without-http_userid_module \
-  --without-http_auth_basic_module \
   --without-http_mirror_module \
   --without-http_autoindex_module \
   --without-http_geo_module \
